@@ -1654,7 +1654,6 @@ def calc_var_cvar_summary(
     Returns:
     pd.DataFrame: Summary of VaR and CVaR statistics.
     """
-    raise Exception("Function not available - needs testing prior to use")
     if window is None:
         print('Using "window" of 60 periods, since none was specified')
         window = 60
@@ -1697,6 +1696,7 @@ def calc_var_cvar_summary(
         hit_ratio['Hit Ratio Error'] = (hit_ratio['Hit Ratio'] - quantile) / quantile
         hit_ratio['Hit Ratio Absolute Error'] = abs(hit_ratio['Hit Ratio Error'])
         hit_ratio = hit_ratio.sort_values('Hit Ratio Absolute Error')
+        print(hit_ratio)
         return filter_columns_and_indexes(
             hit_ratio,
             keep_columns=keep_columns,
@@ -2064,7 +2064,6 @@ def calc_dynamic_carry_trade(
     Returns:
     pd.DataFrame: Summary of the carry trade strategy statistics or premium series.
     """
-    raise Exception("Function not available - needs testing prior to use")
     if annual_factor is None:
         print("Regression assumes 'annual_factor' equals to 12 since it was not provided")
         annual_factor = 12
